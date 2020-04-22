@@ -1,3 +1,5 @@
+require 'pry'
+
 instructors = [
     {name: "Paul", role: "lead"},
     {name: "Shannon", role: "coach"},
@@ -6,48 +8,24 @@ instructors = [
 ]
 
 
-# each
-# does the same thing for every item in the array
-# instructors.each do |instructor|
-#     puts instructor[:name]
-# end
+def print_coaches_names(teachers)
+    binding.pry
 
-instructor_array = []
-instructors.each do |instructor|
-    instructor_array << instructor[:name]
+    coaches = teachers.seldxgafdect do |teacher|
+        teacher[:role] == "coach"
+    end
+
+    names = coaches.each do |coach|
+        coach[:name]
+    end
+    binding.pry
+    loud_names = names.map do |name|
+        name.upcase
+    end
+
+    return loud_names
 end
 
-# print instructor_array
+# Goal:  ["SHANNON", "CHINE", "YOAN"]
 
-# map / collect
-# returns new array based on return value of the block
-mapped_instructor_array = instructors.map do |instructor| 
-    instructor[:name].upcase + " is a great instructor"
-end
-
-
-# print mapped_instructor_array
-
-mapped_array = instructors.each {|instructor| instructor[:name]}
-# print mapped_array == instructors
-
-# find / detect
-# returns first element that matches a condition
-me = instructors.find do |instructor|
-    instructor[:name] == "Paul"
-end
-
-# print me
-
-# select / find_all
-# returns array of all elements that matches a condition
-
-coaches = instructors.select do |instructor|
-    instructor[:role] == "coach"
-end
-
-coach_names = coaches.map {|coach| coach[:name]}
-
-print coach_names
-
-
+print_coaches_names(instructors)
