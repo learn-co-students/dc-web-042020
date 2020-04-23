@@ -18,7 +18,7 @@ class Puppy
     def cuteness=(new_cuteness)
         min = 1
         max = 10
-        @cuteness = new_cuteness.clamp(min, max)
+        self.cuteness=(new_cuteness.clamp(min, max))
     end
 
     # def min_max_cute(change)
