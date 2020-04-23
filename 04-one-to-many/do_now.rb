@@ -15,22 +15,30 @@ class Puppy
         @cuteness = 5
     end
 
+    def cuteness=(new_cuteness)
+        min = 1
+        max = 10
+        @cuteness = new_cuteness.clamp(min, max)
+    end
+
+    # def min_max_cute(change)
+    #     self.cuteness += change
+    #     print(self.cuteness)
+    #     # if self.cuteness > max
+    #     #     self.cuteness = max
+    #     # elsif self.cuteness < min
+    #     #     self.cuteness = min
+    #     # end
+    #     self.cuteness = self.cuteness.clamp(min, max)
+    # end
+
     def play_in_the_mud
-        @cuteness -= 5
-        if @cuteness > 10
-            @cuteness = 10
-        elsif @cuteness < 1
-            @cuteness = 1
-        end
+        self.cuteness = self.cuteness - 5
     end
 
     def take_a_bath
-        @cuteness += 3 
-        if @cuteness > 10
-            @cuteness = 10
-        elsif @cuteness < 1
-            @cuteness = 1
-        end
+        self.cuteness = self.cuteness + 3
+        # self.cuteness += 3
     end    
 end
 
@@ -40,3 +48,7 @@ fido.take_a_bath
 puts fido.cuteness == 8 # test that take a bath raises cuteness by 3
 fido.take_a_bath
 puts fido.cuteness == 10 # test that cuteness cannot exceed 10
+
+fido.cuteness = 200
+
+puts fido.cuteness
