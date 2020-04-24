@@ -1,4 +1,4 @@
-- Build M2M w/o
+- Build M2M w/o join table.  Have groups build a remove_meal and remove_restaurant method
 
 ```rb
 class Restaurant

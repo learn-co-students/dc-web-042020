@@ -1,15 +1,29 @@
 require "pry"
-require_relative "./tweet.rb"
-require_relative "./user.rb"
+require_relative "./restaurant.rb"
+require_relative "./meal.rb"
+require_relative "./restaurant_meal.rb"
 
-coffee_dad = User.new("Coffee Dad")
-tea_uncle = User.new("Tea Uncle")
+mcdonalds = Restaurant.new("McDonalds")
+bk = Restaurant.new("Burger King")
 
-tweet1 = Tweet.new("I love coffee", coffee_dad)
-tweet2 = Tweet.new("Making coffee", coffee_dad)
-tweet3 = Tweet.new("I need coffee", coffee_dad)
-tweet4 = Tweet.new("Life is a meaningless void", coffee_dad)
-tweet5 = Tweet.new("I need tea", tea_uncle)
-tweet6 = Tweet.new("I like tea", tea_uncle)
-tweet7 = Tweet.new("Life is a wonderous place", tea_uncle)
+# puts mcdonalds.name
 
+burger = Meal.new("Hamburger")
+fries = Meal.new("French fries")
+
+RestaurantMeal.new(mcdonalds, burger, 10)
+RestaurantMeal.new(bk, burger, 10)
+
+# mcdonalds.add_meal(burger)
+
+# puts mcdonalds.meals.include?(burger)
+# print burger.restaurants
+
+mcdonalds.add_meal(fries)
+mcdonalds.remove_meal(burger)
+
+print mcdonalds.meals
+# puts !mcdonalds.meals.include?(burger)
+
+
+# print burger.restaurant_names
