@@ -10,5 +10,21 @@ task :hi do
     puts "Hi everybody!"
 end
 
+desc "Set up my database"
+task :db_setup do 
+    sql = """
+        CREATE TABLE IF NOT EXISTS books (
+        id INTEGER PRIMARY KEY,
+        title TEXT,
+        author_id INTEGER);
+    """
+    DB.execute(sql)
 
 
+    sql = """
+        CREATE TABLE IF NOT EXISTS authors (
+        id INTEGER PRIMARY KEY,
+        name TEXT);
+    """
+    DB.execute(sql)
+end

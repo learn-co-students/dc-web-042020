@@ -1,4 +1,5 @@
 # Intro to ORMS
+  - Object Relational Mapping
 
 
 ## Objectives
@@ -8,8 +9,6 @@
   - Create SQL tables that correspond to Ruby classes
   - Organize code files in a logical manner
   - Utilize an environment file to set up database connection and other aspects of code environment
-
-  
   
 ## Deliverables
 
