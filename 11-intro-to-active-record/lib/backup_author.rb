@@ -1,6 +1,6 @@
 require_relative '../config/environment'
 
-class BackupAuthor
+class BackupAuthor < DatabaseModel
 
     attr_accessor :name, :id
 
@@ -9,28 +9,28 @@ class BackupAuthor
         @id = id
     end
 
-    def self.make_object_from_row(row)
-        # [1, "Mark Twain"]
-        Author.new(row[1], row[0])
-    end
+    # def self.make_object_from_row(row)
+    #     # [1, "Mark Twain"]
+    #     Author.new(row[1], row[0])
+    # end
     
-    def self.create(name)
-        author = Author.new(name)
-        author.save
-    end
+    # def self.create(name)
+    #     author = Author.new(name)
+    #     author.save
+    # end
 
-    def self.find_by(name)
-        sql = <<-SQL
-            SELECT * from authors 
-            WHERE name LIKE ?
-        SQL
-        results = DB.execute(sql, name)[0]
-        if results
-            Author.make_object_from_row(results)
-        else
-            return nil
-        end
-    end
+    # def self.find_by(name)
+    #     sql = <<-SQL
+    #         SELECT * from authors 
+    #         WHERE name LIKE ?
+    #     SQL
+    #     results = DB.execute(sql, name)[0]
+    #     if results
+    #         Author.make_object_from_row(results)
+    #     else
+    #         return nil
+    #     end
+    # end
 
     def self.find_or_create(name:)
         author = Author.find_by(name)
