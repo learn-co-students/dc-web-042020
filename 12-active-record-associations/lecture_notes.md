@@ -1,3 +1,6 @@
+- cohort names
+- importance of reading instructions, documentation, etc
+
 - Have students sketch out domain as Do Now
 
 - Migrations *must* have their class name and file name match
