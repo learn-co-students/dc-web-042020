@@ -1,6 +1,7 @@
 Doctor.destroy_all
 Hospital.destroy_all
-# Patient.destroy_all
+Patient.destroy_all
+DoctorPatient.destroy_all
 
 sacred_heart = Hospital.find_or_create_by(name: "Sacred Heart")
 county = Hospital.find_or_create_by(name: "County")
