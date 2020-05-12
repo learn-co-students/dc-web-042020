@@ -1,12 +1,13 @@
 <h1>Listing of all the books</h1>
 
+<a href="/books/new">Create a new book</a>
 
-<uL>
+<ol>
     <% @books.each do |book| %>
         <li>
-            <a href="/books/<%= book.id %>"><%= book.title %></a>
-            
-            
+            <a href="/books/<%= book.id %>">
+                <%= book.title %>
+            </a>
         </li>
     <% end %>
-</uL>
+</ol>
