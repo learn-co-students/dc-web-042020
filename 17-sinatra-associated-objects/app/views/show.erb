@@ -1,0 +1,16 @@
+<h1>Detail page for <%= @book.title %></h1>
+
+
+<div>by: <%= @book.author %></div>
+
+<div><%= @book.snippet %></div>
+
+
+
+<form action="/books/<%= @book.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete this book">
+</form>
+
+<div><a href="/books/<%= @book.id %>/edit">Edit this book</a></div>
+<div><a href="/books">Back to Index Page</a></div>
