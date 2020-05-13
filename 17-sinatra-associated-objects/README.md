@@ -10,9 +10,9 @@
 
 ```text
 Lecture Deliverables:
-  As a site visitor, I should be able to see a list of authors
+  As a site visitor, I should be able to see a list of authors (index page)
  
-  Clicking on an author's name should go to their detail page
+  Clicking on an author's name should go to their detail page (show page)
 
   The Author's Detail page should list all of the author's books, which should link to the book's 
   detail page
