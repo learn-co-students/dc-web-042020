@@ -1,0 +1,11 @@
+<h1>Detail Page for Snack</h1>
+
+<div>
+    <div>Name:  <%= @snack.name %></div>
+    <div>Calories: <%= @snack.calories %></div>
+    <div>Deliciousness: <%= @snack.deliciousness %></div>
+</div>
+
+
+<!-- <a href="/snacks">Back to Snack Index Page</a> -->
+<%= link_to "Back to Snack Index Page", snacks_path %>
