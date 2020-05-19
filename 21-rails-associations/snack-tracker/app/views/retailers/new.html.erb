@@ -1,0 +1,23 @@
+<h1>Retailers#new</h1>
+<p>Find me in app/views/retailers/new.html.erb</p>
+
+
+<%= form_for @retailer do |f| %>
+    <%= f.label :name, "New Retailer Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :year_established %>
+    <%= f.number_field :year_established %>
+
+    <h4>Snacks by this retailer</h4>
+        <%= f.fields_for :snacks do |s| %>
+            <div>
+                <%= s.label :name %>
+                <%= s.text_field :name %>
+                <%= s.label :calories %>
+                <%= s.number_field :calories %>
+                <%= s.label :deliciousness %>
+                <%= s.select :deliciousness, (1..10) %>
+            </div>
+        <% end %>
+    <%= f.submit %>
+<% end %>

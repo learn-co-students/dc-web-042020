@@ -12,7 +12,6 @@ class SnacksController < ApplicationController
 
   def new
     @snack = Snack.new # empty snack container / skeleton
-
   end
 
   def create
@@ -46,7 +45,7 @@ class SnacksController < ApplicationController
   private
 
   def snack_params # strong params
-    params.require(:snack).permit(:name, :deliciousness, :calories)
+    params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id)
   end
 
   def find_snack
