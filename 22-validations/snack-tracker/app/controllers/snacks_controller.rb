@@ -15,16 +15,17 @@ class SnacksController < ApplicationController
   end
 
   def create
-    # name = params[:snack][:name]
-    # calories = params[:snack][:calories]
-    # deliciousness = params[:snack][:deliciousness]
-    # name = "Ring Dings"
-    # calories = 200
-    # deliciousness = 5
-    # snack = Snack.create(name: name, calories: calories, deliciousness: deliciousness)
-    # Snack.create(params[:snack])
-    snack = Snack.create(snack_params)
-    redirect_to snack_path(snack)
+
+    # try to the make the snack
+    @snack = Snack.new(snack_params)
+    if !@snack.valid?
+    # if there are errors, re-render the form and tell the user what went wrong
+     render :new # load the ':new' view/tempalte
+    else
+     # otherwise, save the snack and redirect to the detail page
+      @snack.save
+      redirect_to snack_path(@snack)
+    end
   end
 
   def edit
@@ -32,8 +33,14 @@ class SnacksController < ApplicationController
   end
 
   def update
+
     @snack.update(snack_params)
-    redirect_to snack_path(@snack)
+    if !@snack.valid?
+      render :edit
+    else
+      @snack.save  
+      redirect_to snack_path(@snack)
+    end
   end
 
   def destroy
