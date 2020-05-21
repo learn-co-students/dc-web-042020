@@ -1,0 +1,14 @@
+<h1>Send a scientist to their doom</h1>
+
+
+<%= form_for @mission do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :planet_id %>
+
+    <%= f.collection_select :planet_id, Planet.all, :id, :name %>
+    <%= f.collection_select :scientist_id, Scientist.all, :id, :last_name %>
+
+    <%= f.submit %>
+
+<% end %>

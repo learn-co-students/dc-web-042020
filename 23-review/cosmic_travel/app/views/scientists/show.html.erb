@@ -1,0 +1,17 @@
+<h1>Detail Page</h1>
+
+<h2><%= @scientist.name %></h2>
+<h3><%= @scientist.field_of_study %></h3>
+<div>
+    <% if @scientist.planets.empty? %>
+        <h3>This scientist has not been to any planets</h3>
+    <% else %>
+        <h3>All the planets I've visited: </h3>
+        <% @scientist.planets.each do |planet| %>
+            <%= planet.name %>
+        <% end %>
+    <% end %>
+</div>
+
+
+<%= button_to "Murder this scientist", scientist_path(@scientist.id), :method => :delete, data: {:confirm => "You sure?" } %>
