@@ -7,14 +7,18 @@ class SessionsController < ApplicationController
 
   def login_user
     username = params[:username]
-    logged_in_user = User.find_by(username: username)
-    if logged_in_user
-        session[:logged_in_user_id] = logged_in_user.id
+    password = params[:password]
+    user_to_login = User.find_by(username: username)
+
+    if user_to_login && user_to_login.authenticate(password)
+        session[:logged_in_user_id] = user_to_login.id
         redirect_to snacks_path
     else
-        flash[:error_message] = "No user found with that name"
+        flash[:error_message] = "No user found with that name and password"
         render :login
     end
+
+
   end
 
   def logout_user
