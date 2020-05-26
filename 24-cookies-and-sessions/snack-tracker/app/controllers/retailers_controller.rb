@@ -5,6 +5,7 @@ class RetailersController < ApplicationController
 
   def show
     @retailer = Retailer.find(params[:id])
+    cookies["last_retailer"] = @retailer.name
   end
 
   def new

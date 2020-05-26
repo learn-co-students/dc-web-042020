@@ -1,5 +1,9 @@
 <h1>All The Snacks</h1>
 
+<div><%= current_user.username %>'s favorite cookie is <%= cookies["my_favorite"] %> </div>
+<div>The last snack <%= current_user.username %>'s looked at was <%= cookies["last_visited"] %></div>
+<div>The last retailer <%= current_user.username %>'s looked at was <%= cookies["last_retailer"] %></div>
+<div><%= current_user.username %>'s  secret favorite cookie is <%= session["secret_favorite"] %></div>
 
 <ul>
     <% @snacks.each do |snack| %>
