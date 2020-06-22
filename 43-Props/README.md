@@ -4,14 +4,14 @@
 - Planning and drawing boxes around everything
 - Component Hierarchy
 - Build Static Components
-
+```
 App
  |- Header
  |- CardContainer
     |- Card
     |- Card
     |- Card
-
+```
 ## Props
 - Props are passed to other components and can only flow down (passed from parent)
 - What does the props object look like?
