@@ -1,0 +1,68 @@
+how do you add pokemon?
+ How do you remove a pokemon from your team?
+How do you view stats?
+
+Once a wild pokemon is chosen, is it removed from the wild pokemon list? 
+Yes, no? maybe so.
+- Would like to not show the pokemomn in the wild if it's on the team
+
+
+how many pokemon to a team?  6
+ what happens if you try to add more than is permitted on your team?, alert
+Can we have more than one of the same pokemon? No
+
+
+
+Are other people connected to this list?   - No, solo person's app
+How do you play the game? - app be bulding a team
+How are we getting the pokemon (data) in the first place ? - pokeApi
+Are all pokemon level 100? or are stats randomly generated? - pokeApi
+ are these base stats? - yes, from the pokeApi
+
+
+
+how much gimmick is too much gimmick?
+ Would you want to know its type? 
+ How do you search for each pokemon? filters? 
+Do we want animation or just a picture??
+
+Questions for Pokemon App Client
+	Validations
+		- Can a user have only one pokemon in his team with same name?
+		- Also, if one has one pokemon, e.g. pikachu, then the other team cannot take him in his team, right?
+		- Is it a taurnament or wild pokemon gathering? so we know that the pokemon sample can only be used once ? or multiple times?
+		- Do you want the pokemon type to be displayed?
+
+
+
+
+
+
+
+
+    |App
+    	  -|TeamContainer c
+    	  	-|PokemonCards p
+    	  -|DisplayStat p
+    	  -|WildPokemon c
+    	  	-|PokemonCards p
+
+
+
+
+
+
+
+Design State
+  Wild and the display Pokemon, State is managed in App for both Team, 
+
+
+
+
+
+Rec and Extra
+  		1.Create container for another display Pokemon to compare two pokemon - this will help a user to pick the right pokemon in his team.
+  		2.Display pokemon "type" in DisplayPokemon.
+  		3. Training or leveling up feature
+  		4. Also, what are moves they have?
+  		5. Battle Royal feature
