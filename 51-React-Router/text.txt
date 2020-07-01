@@ -1,0 +1,6 @@
+() => <PaintingsList
+    onSearchHandler={this.onSearchHandler}
+    filterTerm={this.state.searchTerm}
+    paintings={this.state.paintingsList}
+    onSelectPainting={this.onSelectPainting}
+      />
