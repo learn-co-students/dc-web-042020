@@ -12,6 +12,25 @@ class App extends React.Component {
     this.state = {currentUser: null} //is someone logged in?
   }
 
+  componentDidMount(){
+    if(localStorage.getItem("jwt")){
+      fetch("http://localhost:3000/api/v1/token", {
+        method: "GET",
+        headers: {
+          "Authentication": localStorage.getItem("jwt")
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        this.updateUser(data)
+      })
+    }
+    //check if there is token in localStorage
+    //if so, make fetch call to find out logged in user
+    //then this.setState of currentUser
+  }
+
   updateUser = (user) => {
     this.setState({currentUser: user})
   }
@@ -22,7 +41,7 @@ class App extends React.Component {
   render(){
     return (
       <Fragment>
-        <Nav />
+        <Nav currentUser={this.state.currentUser} updateUser={this.updateUser}/>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/login" />} />
           <Route exact path="/profile" render={() =>

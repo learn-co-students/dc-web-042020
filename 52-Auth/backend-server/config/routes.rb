@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index] #route only used for testing
       post '/login', to: 'auth#create'
+      get  '/token', to: 'auth#token_log_in'
     end
   end
 

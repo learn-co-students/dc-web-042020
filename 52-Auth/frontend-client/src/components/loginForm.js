@@ -22,10 +22,12 @@ class LoginForm extends React.Component {
       body: JSON.stringify(this.state)
     }).then(res => res.json())
     .then(data => {
+      console.log("server response", data)
       if(data.error){
         alert(data.message)
       }else{
-        this.props.updateUser(data)
+        localStorage.setItem('jwt', data.token)
+        this.props.updateUser(data.user_data)
       }
     })
   };
