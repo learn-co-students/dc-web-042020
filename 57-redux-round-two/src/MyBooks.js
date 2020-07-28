@@ -1,13 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import Book from './Book';
 
 function MyBooks(props) {
   return (
-    <div>
-      {props.myBooks.map(book => <Book title={book["volumeInfo"]["title"]} />)}
+    <div className="MyBooks">
+      {props.myBooks.map(book => <Book key={book.id} book={book} />)}
     </div>
   );
 }
 
-export default MyBooks;
+function mapStateToProps(state) {
+  return {
+    myBooks: state.myBooks
+  }
+}
+
+export default connect(mapStateToProps)(MyBooks);

@@ -1,15 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Book from './Book';
 
-function BookContainer(props) {
+function BookContainer({ books }) {
   return (
-    <div>
-      {props.results.map(book => {
-        return (<Book title={book["volumeInfo"]["title"]} addToMyBooks={props.addToMyBooks(book)}/>)
-      })}
+    <div className="BookContainer">
+      {books.map(book => <Book key={book.id} book={book} />)}
     </div>
   );
 }
 
-export default BookContainer;
+function mapStateToProps(state) {
+  return {
+    books: state.results
+  }
+}
+
+export default connect(mapStateToProps)(BookContainer);

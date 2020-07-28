@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.BookSearch,
+.BookContainer,
+.MyBooks {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.Book {
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.Book::before {
+  content: "Book component";
+  opacity: 0.2;
+  display: block;
+}
+
+.BookSearch {
+  background-color: #eee;
+}
+
+.BookSearch::before {
+  content: "BookSearch component";
+  opacity: 0.3;
+  display: block;
+}
+
+.BookContainer {
+  background-color: #ccc;
+}
+
+.BookContainer::before {
+  content: "BookContainer component";
+  opacity: 0.3;
+  display: block;
+}
+
+.MyBooks {
+  background-color: #aaa;
+}
+
+.MyBooks::before {
+  content: "MyBooks component";
+  opacity: 0.3;
+  display: block;
+}
